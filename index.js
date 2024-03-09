@@ -5,12 +5,13 @@ const Razorpay = require('razorpay');
 const app = express();
 
 app.use(express.json());
+app.use(express.static('./public'));
 
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-    res.send("Welcome to Rezorpay Project");
-});
+// app.get("/", (req, res) => {
+//     res.send("index.html");
+// });
 
 app.post("/order", async (req, res) => {
     const amount = req.body.amount;
